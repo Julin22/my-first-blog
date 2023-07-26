@@ -4,13 +4,12 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">Blog do Julin</a></h1>
+            <h1><a href="/">Blog do julin</a></h1>
         </div>
-        <div>
-            <p>Publicado: 14/06/2023, 16:32</p>
-            <h2><a href="">Meu primeiro post</a></h2>
-            <p>Esse é o texto do primeiro post, não leve ele a sério. Só está aqui porque sim.</p>
-        </div>
-    </body>
-</html>
-
+        {% for post in posts %}
+            <div>
+                <p>publicado em: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr}}</p>
+            </div>
+        {% endfor %}
